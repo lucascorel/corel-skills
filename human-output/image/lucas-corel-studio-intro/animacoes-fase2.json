@@ -1,0 +1,150 @@
+{
+  "project": "lucas-corel-studio-intro",
+  "phase": "2 - animacao dos pares Start/End",
+  "generated": "2026-08-30",
+  "notes": [
+    "Um prompt por plano. Cada plano anima o par Start (frame A) -> End (frame B) da Fase 1.",
+    "Dialogos: apenas os planos 2 e 7 tem fala on-camera, conforme o video de referencia. Os planos 1, 3, 4, 5 e 6 sao B-roll sem fala (dialogue = null). Se o roteiro final tiver mais falas, me passe as linhas e eu encaixo.",
+    "Falas conhecidas do video anterior: plano 2 = 'Hi! I'm your music producer'; plano 7 = 'So, shall we create something together?'. Ambas em ingles americano.",
+    "Modelo: kling3_0 para planos contemplativos (camera calma), seedance_2_0 para os com energia/corte. Prompts Seedance idealmente traduzidos para chines na entrega final (regra do framework) - aqui estao em ingles para iteracao.",
+    "Em toda geracao passe o character sheet / as 2 fotos de retrato como --image junto do --start-image. O --start-image e o still A aprovado; o --end-image (Kling) ou frame final e o still B aprovado.",
+    "Sound design sempre fisico e especifico, nunca musical. Todo prompt Seedance termina com 'No music.'"
+  ],
+  "shared_locks": {
+    "identity": "Same man as the still references, face identical on every frame - early-30s, warm light-brown mixed complexion, closely buzzed near-shaved hair with a natural hairline, thick dark eyebrows, dark brown eyes, straight nose, full lips, a neat mustache linking into a narrow chin-strap beard with a small soul patch, lean face, calm direct presence. No morphing of face, hairline or beard shape at any point.",
+    "wardrobe": "Plain white crew-neck cotton t-shirt with no print, an open black denim trucker jacket, black trousers. No watch, no rings, no necklace, no hat.",
+    "environment": "Intimate home music studio: solid walnut desk with warm grain; back wall is a wooden skyline acoustic diffuser of staggered timber blocks; centred ultrawide monitor showing a DAW timeline with coloured audio waveforms; two black nearfield studio monitors on foam isolation pads flanking the screen; slim silver audio interface in front; lower shelf with a synthesizer, a groovebox and a rack unit; large-diaphragm condenser microphone on a black articulated boom arm with a round pop filter at frame right; closed-back headphones resting on the desk edge.",
+    "light": "Low-key motivated lighting: soft warm key from camera-left at about 45 degrees; subtle cool rim light separating him from the dark diffuser wall; deep controlled shadows; no blown highlights and no bright window; practical LEDs on the gear glowing warm.",
+    "look": "Full-frame 35mm cinematography, warm filmic colour with teal-leaning shadows and amber highlights, gentle fine film grain, faint halation on speculars, protected slightly-lifted blacks, midtone priority on skin, shallow natural depth of field. Photoreal, shot on prime lenses. Inspired by the work of award-winning directors."
+  },
+  "shots": [
+    {
+      "shot": 1,
+      "label": "Establishing",
+      "register": "contemplative",
+      "model": "kling3_0",
+      "duration_s": 5,
+      "mode": "std",
+      "sound": "off",
+      "start_image": "still 01A (estudio vazio)",
+      "end_image": "still 01B (Lucas sentado, ajustando o headphone)",
+      "camera": "Locked-off wide, 24mm, completely static tripod - no pan, no push, no zoom, no drift.",
+      "subject_action": "Opens on the empty room. The man enters unhurried from the left edge of frame, crosses to the black leather studio chair, sits and settles his weight, then lifts the closed-back headphones from the desk and brings both hands up to set them over his ears, eyes down toward the desk. He goes still.",
+      "dialogue": null,
+      "sound_design": "Quiet room tone, soft roll of the chair casters, a chair creak as he sits, denim jacket fabric rustle, faint click of the headphone band settling.",
+      "prompt": "Locked-off wide shot of an intimate home music studio, 24mm lens, camera completely static on a tripod - no pan, no push, no zoom. The shot opens on the empty room: black leather studio chair turned slightly toward the walnut desk, every screen and gear LED glowing softly, a thin shaft of warm light with faint dust drifting in it. A man enters from the left edge of frame, unhurried. He crosses to the chair and sits down, settling his weight, then reaches to the desk edge, lifts the closed-back headphones and brings both hands up to set them over his ears, eyes down toward the desk. He goes still. Same man as the references, face and build identical throughout: closely buzzed near-shaved hair with a natural hairline, lean build, warm light-brown complexion, neat mustache and narrow chin-strap beard. He wears a plain white crew-neck t-shirt, an open black denim trucker jacket and black trousers. Behind him the wooden skyline acoustic diffuser wall, the centred ultrawide monitor with coloured DAW waveforms and two flanking black studio monitors. Low-key motivated light: soft warm key from camera-left, cool rim separating him from the dark diffuser wall, deep controlled shadows, no blown highlights. Warm filmic colour, teal shadows, amber highlights, gentle fine grain, shallow natural depth of field. Calm, unhurried mood. Sound design: quiet room tone, the soft roll of the chair casters, a chair creak as he sits, fabric rustle of the denim jacket, the faint click of the headphone band settling. No music."
+    },
+    {
+      "shot": 2,
+      "label": "Talking-head intro",
+      "register": "contemplative",
+      "model": "kling3_0",
+      "duration_s": 5,
+      "mode": "std",
+      "sound": "on",
+      "start_image": "still 02A (medio frontal, maos na bancada, expressao neutra)",
+      "end_image": "still 02B (gesto de mao aberto, meio sorriso, falando)",
+      "camera": "Static medium, 50mm, eye level, no move.",
+      "subject_action": "He begins with hands resting on the desk edge and a calm closed-mouth expression, then lifts one open palm toward camera in a natural explaining gesture, breaks into a warm slight smile and speaks the line straight into the lens.",
+      "dialogue": {
+        "line": "Hi! I'm your music producer",
+        "language": "American English",
+        "delivery": "warm, welcoming, confident, unhurried; lips synced to the line"
+      },
+      "sound_design": "Close intimate room tone, a soft denim rustle as his arm lifts, the natural voice close-mic'd and dry.",
+      "prompt": "Static medium shot, 50mm lens, eye level, camera locked. A man is seated facing camera at the walnut desk of an intimate home music studio, framed slightly right of centre, the condenser microphone and round pop filter soft in the right foreground. He begins with both hands resting on the front edge of the desk and a calm, closed-mouth expression, looking into the lens. Then he lifts one open palm toward camera in a natural explaining gesture, breaks into a warm slight smile, and says in American English, clearly, lips synced to the line: \"Hi! I'm your music producer\". Same man as the references, face identical throughout: early-30s, warm light-brown complexion, closely buzzed near-shaved hair with a natural hairline, thick dark eyebrows, dark brown eyes, straight nose, full lips, neat mustache into a narrow chin-strap beard with a small soul patch, lean face. He wears a plain white crew-neck t-shirt with no print, an open black denim trucker jacket, black trousers. Behind him the wooden skyline diffuser wall, the ultrawide monitor with coloured DAW waveforms and the flanking studio monitors stay soft in shallow focus. Low-key motivated light: soft warm key from camera-left at 45 degrees, subtle cool rim, deep controlled shadows, gear LEDs glowing warm. Warm filmic colour, teal shadows, amber highlights, gentle fine grain, faint halation. Intimate, grounded, conversational mood. Sound design: close intimate room tone, a soft denim rustle as his arm lifts, his natural voice close and dry. No music bed under the voice."
+    },
+    {
+      "shot": 3,
+      "label": "Face push-in",
+      "register": "contemplative",
+      "model": "kling3_0",
+      "duration_s": 5,
+      "mode": "std",
+      "sound": "off",
+      "start_image": "still 03A (medio-close, 3/4, olhando na lente)",
+      "end_image": "still 03B (close fechado no rosto, olhos na lente)",
+      "camera": "Slow smooth dolly straight in, 85mm, constant speed, no shake, no rotation - from medium-close portrait to tight close-up on the face.",
+      "subject_action": "He holds still and keeps his eyes locked into the lens the whole time. Only motion: one slow natural blink and the faint rise and fall of a quiet breath. No head turn, no expression change.",
+      "dialogue": null,
+      "sound_design": "Barely-there room tone only.",
+      "prompt": "Slow, smooth push-in on a man's face in an intimate home music studio. The camera starts on a medium-close portrait, three-quarter angle, and dollies gently straight in over the full shot until it rests on a tight close-up of just his face and the tops of his shoulders. 85mm lens, no shake, constant slow speed, no rotation - a clean controlled move. He holds still and keeps his eyes locked into the lens the whole time, calm and confident. The only motion from him: one slow natural blink and the faint rise and fall of a quiet breath. No head turn, no expression change. Same man as the references, face identical on every frame of the move: closely buzzed near-shaved hair with a natural hairline, thick dark eyebrows, dark brown eyes, straight nose, full lips, a neat mustache linking into a narrow chin-strap beard with a small soul patch, lean face, warm light-brown complexion - same bone structure, hairline and beard shape throughout. He wears a plain white crew-neck t-shirt and an open black denim trucker jacket. Behind him the wooden skyline diffuser wall and gear stay fully soft, dissolving further into warm bokeh as the camera closes in. Low-key motivated light: soft warm key from camera-left with a clear warm catchlight in each eye, subtle cool rim on the cheekbone and ear, deep controlled shadow on the far side. Warm filmic colour, teal shadows, amber highlights, gentle fine grain, faint halation on the catchlights. Sound design: barely-there room tone only. No music."
+    },
+    {
+      "shot": 4,
+      "label": "Over-the-shoulder",
+      "register": "contemplative",
+      "model": "kling3_0",
+      "duration_s": 5,
+      "mode": "std",
+      "sound": "off",
+      "start_image": "still 04A (OTS ampla, tela da DAW ao fundo)",
+      "end_image": "still 04B (OTS fechada, waveforms nitidas, mao no mouse)",
+      "camera": "Slow gentle push-in over the shoulder, 35mm to 50mm feel, easing toward the screen, no shake.",
+      "subject_action": "Seen from behind his right shoulder, he works quietly at the desk: his hand moves the mouse in small precise movements, he leans a few centimetres closer to the screen as the camera closes in. Head and shoulders otherwise steady.",
+      "dialogue": null,
+      "sound_design": "Room tone, discrete mouse clicks, a single soft key tap, a quiet chair creak as he leans in, low hum of the monitor.",
+      "prompt": "Over-the-shoulder shot from behind a man's right shoulder as he sits at the walnut desk of an intimate home music studio. Camera does a slow, gentle push-in easing toward the ultrawide monitor, no shake, constant speed. It opens wide - his shoulder and the back of his closely buzzed head soft and large in the lower-left foreground, the centred ultrawide monitor with coloured DAW waveforms and a mixer strip mid-frame, the rest of the gear around it - and ends close, the DAW screen dominant and critically sharp with multicoloured waveforms, transport controls and small UI text, his hand on the mouse blurred in the lower foreground. He works quietly: small precise mouse movements, and he leans a few centimetres closer to the screen as the camera closes in; head and shoulders otherwise steady. Same man as the references seen from behind: closely buzzed near-shaved hair, lean build, plain white crew-neck t-shirt collar and open black denim trucker jacket. Low-key motivated light: soft warm key from camera-left, the monitor adding a cool fill on his shoulder and ear, deep controlled shadows, warm practical LEDs behind. Warm filmic colour, teal shadows, amber highlights, gentle fine grain, faint halation on the screen glow. Focused, absorbed mood. Sound design: room tone, discrete mouse clicks, a single soft key tap, a quiet chair creak as he leans in, the low hum of the monitor. No music."
+    },
+    {
+      "shot": 5,
+      "label": "Macro MIDI",
+      "register": "light kinetic",
+      "model": "seedance_2_0",
+      "duration_s": 4,
+      "resolution": "1080p",
+      "mode": "std",
+      "genre": "auto",
+      "start_image": "still 05A (mao saindo do mouse em direcao ao controlador)",
+      "end_image": "n/a (Seedance usa apenas --start-image; o still 05B e a referencia de destino)",
+      "camera": "Macro, 100mm, extreme shallow depth of field, camera near-static with a micro reframe following the hand.",
+      "subject_action": "His right hand lifts off the mouse, travels to the black MIDI keyboard controller and the fingertips press down three white keys with visible key travel; one rubber pad lights soft red as the hand lands.",
+      "dialogue": null,
+      "sound_design": "Close room tone, the soft plastic knock of fingertips on keys, the mechanical give of the keybed, a faint synth note swelling from the monitors as the keys go down, then cutting. Escalates from silence to the note.",
+      "prompt": "Macro shot inside an intimate home music studio, 100mm macro lens, extreme shallow depth of field, camera near-static with only a micro reframe to follow the hand. A man's right hand lifts off the computer mouse, travels across the walnut desk to the black MIDI keyboard controller, and the fingertips press down three white keys with visible key travel - tendons and knuckles crisp, skin texture and pores sharp. One small rubber pad lights soft red as the hand lands. The white t-shirt cuff and black denim jacket sleeve are soft at the frame edge; warm light-brown skin tone, clean short nails, matching the references. Behind, fully out of focus, the ultrawide monitor glow and the wooden diffuser wall. Low-key motivated light: soft warm key raking across the skin and the keybed, catching every ridge of the knuckles, a faint red bounce from the lit pad, deep shadow behind. Warm filmic colour, teal shadows, amber highlights, gentle fine grain, faint halation. Deliberate, tactile, musical mood. Sound design: close room tone, the soft plastic knock of fingertips on keys, the mechanical give of the keybed, a faint synth note swelling from the monitors as the keys go down and then cutting - building from near-silence to the note. No music."
+    },
+    {
+      "shot": 6,
+      "label": "Vocal take",
+      "register": "contemplative",
+      "model": "kling3_0",
+      "duration_s": 6,
+      "mode": "std",
+      "sound": "on",
+      "start_image": "still 06A (girando a cadeira para o microfone)",
+      "end_image": "still 06B (no mic, headphone, olhos fechados, cantando)",
+      "camera": "Slow drift from a medium to a medium-close, 40mm to 65mm feel, easing toward his face, minimal move.",
+      "subject_action": "He rotates the chair toward the condenser microphone, brings one hand up to seat the closed-back headphones over both ears, leans into the pop filter, closes his eyes, and opens his mouth mid-phrase as if singing a sustained note. He does not look at camera.",
+      "dialogue": {
+        "line": null,
+        "language": "n/a",
+        "delivery": "no spoken words - a wordless sustained vocal note, mouth open, eyes closed; no lyric, no lip-sync to text"
+      },
+      "sound_design": "Chair swivel and caster roll, denim rustle, the soft clamp of the headphone cups, a breath in, then a single held vocal note through the shot, close and dry with a hint of studio reverb.",
+      "prompt": "Slow camera drift in an intimate home music studio, from a medium to a medium-close on a man at the microphone, 40mm easing toward 65mm feel, minimal move, no shake. He rotates the black studio chair toward the large-diaphragm condenser microphone at frame right, brings one hand up to seat the closed-back headphones over both ears, leans into the round pop filter, closes his eyes and opens his mouth mid-phrase as if holding a sustained vocal note. He does not look at camera. Same man as the references, face identical throughout: early-30s, warm light-brown complexion, closely buzzed near-shaved hair with a natural hairline, thick dark eyebrows, straight nose, full lips, neat mustache into a narrow chin-strap beard with a small soul patch, lean face. He wears a plain white crew-neck t-shirt with no print, an open black denim trucker jacket, black trousers. The microphone body and pop filter sit sharp along the foreground edge; behind, the wooden diffuser wall and gear are soft. Low-key motivated light: intimate soft warm key on his face, subtle cool rim on the headphone band and cheekbone, deep shadow behind. Warm filmic colour, teal shadows, amber highlights, gentle fine grain, faint halation. Immersed, expressive mood. Sound design: chair swivel and caster roll, denim rustle, the soft clamp of the headphone cups, a breath in, then a single held wordless vocal note through the rest of the shot - close and dry with a hint of studio plate reverb. No music."
+    },
+    {
+      "shot": 7,
+      "label": "Reveal + brand",
+      "register": "light kinetic",
+      "model": "seedance_2_0",
+      "duration_s": 6,
+      "resolution": "1080p",
+      "mode": "std",
+      "genre": "epic",
+      "start_image": "still 07A (extreme close-up do VU do compressor)",
+      "end_image": "still 07B (retrato de marca, fundo azul) - usado como referencia do beat final",
+      "has_hard_cut": true,
+      "camera": "00:00-00:03 macro on the VU meter, static, faint breathing push. 00:03 hard cut. 00:03-00:06 brand portrait on the blue backdrop, slow subtle push-in, static feel.",
+      "subject_action": "First half: no subject, only the compressor's VU needle swinging over 'GAIN REDUCTION' under its warm glow. Hard cut. Second half: the man against a seamless dark teal-blue backdrop, chest-up, squared to camera, direct unsmiling gaze, then he speaks the closing line to the lens.",
+      "dialogue": {
+        "line": "So, shall we create something together?",
+        "language": "American English",
+        "delivery": "calm, inviting, a touch of challenge; spoken on the brand portrait after the cut, lips synced to the line",
+        "timing": "00:03.5 - 00:06.0"
+      },
+      "sound_design": "First half: warm electrical hum, the faint tick of the VU needle, a low compressor thump pulsing with the meter. Hard cut to a clean quiet studio air. Then his voice, close and dry. A single soft sub-drop lands on the cut.",
+      "prompt": "[VIDEO TYPE: Cinematic, 6-second two-part sequence with one hard cut.] [CAMERA: * 00:00-00:03 extreme macro close-up of the illuminated VU meter on an outboard compressor, 100mm macro, static with a faint breathing push, the needle swinging mid-scale over a warm amber-lit face marked GAIN REDUCTION, brushed metal, knobs soft, deep black around the glow. * 00:03 HARD CUT. * 00:03-00:06 studio portrait of a man against a seamless dark teal-blue backdrop - no gear, not the studio room - chest-up, centred, squared to camera, slow subtle push-in.] [SUBJECT: same man as the references, face identical - early-30s, warm light-brown complexion, closely buzzed near-shaved hair with a natural hairline, thick dark eyebrows, dark brown eyes, straight nose, full lips, neat mustache into a narrow chin-strap beard with a small soul patch, lean face. He wears a plain white crew-neck t-shirt with no print and an open black denim trucker jacket.] [ACTION: first half no subject, only the VU needle moving under its glow. After the cut he holds a direct unsmiling gaze, then says in American English, lips synced to the line, calm and inviting: \"So, shall we create something together?\"] [LIGHT: macro half lit only by the meter's warm tungsten glow with halation on the glass; portrait half a single soft key from camera-left, gentle falloff into blue shadow, subtle cool rim on the shoulder.] [COLOUR: warm amber-black on the meter, restrained cool-warm on the portrait.] [GRAIN: gentle fine film grain, faint halation, protected lifted blacks.] [SFX: 00:00-00:03 warm electrical hum, faint tick of the VU needle, a low compressor thump pulsing with the meter; a single soft sub-drop lands on the hard cut; 00:03-00:06 clean quiet studio air, then his close dry voice. No music.]"
+    }
+  ]
+}

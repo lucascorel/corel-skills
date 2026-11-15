@@ -1,0 +1,8 @@
+# Dependencias (reinstalar com npm install)
+node_modules/
+
+# macOS
+.DS_Store
+
+# Configuracao local do Claude Code (por maquina)
+.claude/settings.local.json

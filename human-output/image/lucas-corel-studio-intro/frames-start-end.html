@@ -1,0 +1,374 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+<meta charset="utf-8">
+<title>Lucas Corel — Studio Intro · Frames Start/End</title>
+<style>
+  @page { size: A4; margin: 18mm 16mm 16mm 16mm; }
+  * { box-sizing: border-box; }
+  html { -webkit-print-color-adjust: exact; print-color-adjust: exact; }
+  body {
+    font-family: -apple-system, "Helvetica Neue", Arial, sans-serif;
+    color: #1a1a1a; font-size: 10.5px; line-height: 1.5; margin: 0;
+  }
+  h1 { font-size: 21px; margin: 0 0 2px; letter-spacing: -0.01em; }
+  h2 {
+    font-size: 13px; margin: 26px 0 8px; padding-bottom: 4px;
+    border-bottom: 1.5px solid #1a1a1a; text-transform: uppercase; letter-spacing: 0.06em;
+  }
+  h3 { font-size: 11.5px; margin: 0 0 4px; }
+  .sub { color: #666; font-size: 10px; margin: 0 0 4px; }
+  .lead { color: #333; margin: 4px 0 0; }
+  .meta { color:#888; font-size: 9.5px; margin-top: 2px; }
+  table { width: 100%; border-collapse: collapse; margin: 8px 0; }
+  th, td { text-align: left; vertical-align: top; padding: 5px 7px; border: 0.75px solid #ccc; }
+  th { background: #f0f0f0; font-size: 9.5px; text-transform: uppercase; letter-spacing: 0.04em; }
+  .lock { background: #f7f7f4; border: 0.75px solid #d8d8d0; border-radius: 5px; padding: 9px 11px; margin: 6px 0; }
+  .lock b { display:block; font-size: 9.5px; text-transform: uppercase; letter-spacing: 0.05em; color:#555; margin-bottom: 3px; }
+  .prompt {
+    background: #14140f; color: #e9e9e2; border-radius: 6px; padding: 11px 13px;
+    font-family: "SF Mono", ui-monospace, Menlo, Consolas, monospace;
+    font-size: 9px; line-height: 1.55; white-space: pre-wrap; margin: 5px 0 0;
+  }
+  .shot { page-break-inside: avoid; margin: 16px 0; padding-top: 8px; border-top: 3px solid #1a1a1a; }
+  .pair { display: grid; grid-template-columns: 1fr 1fr; gap: 10px; margin-top: 6px; }
+  .card { border: 0.75px solid #ccc; border-radius: 6px; padding: 8px 9px; }
+  .tag { display:inline-block; font-size: 8.5px; font-weight: 700; letter-spacing: 0.08em;
+         padding: 2px 6px; border-radius: 3px; text-transform: uppercase; }
+  .tag.start { background:#1a1a1a; color:#fff; }
+  .tag.end { background:#fff; color:#1a1a1a; border:1px solid #1a1a1a; }
+  ol, ul { margin: 5px 0 5px 16px; padding: 0; }
+  li { margin: 2px 0; }
+  .pgbreak { page-break-before: always; }
+  code { background:#eee; padding: 0 3px; border-radius: 3px; font-size: 9px; }
+</style>
+</head>
+<body>
+
+<h1>Lucas Corel — Studio Intro</h1>
+<p class="sub">Fase 1 · 14 prompts de imagem (Nano Banana Pro / <code>nano_banana_2</code>) — 7 planos, Start + End</p>
+<p class="meta">Projeto: <code>human-output/image/lucas-corel-studio-intro/</code> · Gerado em 29/08/2026 · Fase 2 (animação dos pares) fica para depois</p>
+
+<h2>Como usar</h2>
+<ol>
+  <li><b>Referência de rosto em toda geração.</b> Anexe sempre as 2 fotos de retrato + <code>referencia-rosto/frame-perfil.jpg</code>. Sem elas a feição não trava.</li>
+  <li><b>Ordem Start → End.</b> Gere o Start primeiro. Depois de aprovar, gere o End <b>usando o Start aprovado como imagem de referência adicional</b> — é o que garante que o par pareça o mesmo instante, mesma luz, mesmo enquadramento.</li>
+  <li><b>Config no Nano Banana:</b> resolução <b>2K</b> (não 4K — 4K fica plástico e perde grão), aspect ratio você define. Proporção sugerida 16:9 para todos.</li>
+  <li><b>Blocos entre colchetes</b> (<code>[IDENTIDADE]</code>, <code>[FIGURINO]</code>, etc.) já vêm expandidos dentro de cada prompt — é só copiar o bloco preto inteiro.</li>
+  <li><b>Continuidade de ambiente:</b> o estúdio é descrito por texto (não por imagem-ref) de propósito — evita "ref bleeding" e mantém os 14 frames no mesmo mundo.</li>
+</ol>
+
+<h2>Travas globais (valem nos 14 frames)</h2>
+
+<div class="lock"><b>Identidade</b>
+Same man in every frame: early-30s, warm light-brown mixed complexion, closely buzzed near-shaved hair with a natural hairline, thick dark eyebrows, dark brown eyes, straight nose, full lips, a neat mustache linking into a narrow chin-strap beard with a small soul patch, lean face, calm and direct presence. Match the supplied face references exactly — identical bone structure, hairline and beard shape in every frame. No aging, no weight change, no expression drift beyond what the shot asks for.
+</div>
+
+<div class="lock"><b>Figurino (fixo — muda só no 7B, ver nota)</b>
+A plain white crew-neck cotton t-shirt with no print or graphic, an open black denim trucker jacket (button front, chest pockets), and black trousers. No watch, no rings, no necklace, no hat.
+</div>
+
+<div class="lock"><b>Ambiente</b>
+An intimate home music studio: a solid walnut desk with warm visible grain; the back wall is a wooden skyline acoustic diffuser made of staggered timber blocks; a centred ultrawide monitor showing a DAW timeline with coloured audio waveforms; two black nearfield studio monitors on foam isolation pads flanking the screen; a slim silver audio interface in front of the monitor; a lower shelf holding a synthesizer, a groovebox and a rack unit; a large-diaphragm condenser microphone on a black articulated boom arm with a round pop filter at frame right; closed-back headphones resting on the desk edge.
+</div>
+
+<div class="lock"><b>Luz</b>
+Low-key, motivated lighting: a soft warm key from camera-left at about 45 degrees; a subtle cool rim light separating him from the dark diffuser wall; deep, controlled shadows; no blown highlights and no bright window; practical LEDs on the gear glowing warm.
+</div>
+
+<div class="lock"><b>Look / acabamento</b>
+Full-frame 35mm cinematography, warm filmic colour with teal-leaning shadows and amber highlights, gentle fine film grain, faint halation on speculars, protected slightly-lifted blacks, midtone priority on skin. Photoreal, shot on prime lenses, natural depth of field, 2K. Inspired by the work of award-winning directors.
+</div>
+
+<h2>Storyboard — 7 planos</h2>
+<table>
+  <tr><th>#</th><th>Plano</th><th>Start</th><th>End</th><th>Registro (Fase 2)</th></tr>
+  <tr><td>1</td><td>Establishing</td><td>Estúdio vazio, cadeira vazia</td><td>Lucas senta e ajusta o headphone</td><td>Contemplativo</td></tr>
+  <tr><td>2</td><td>Talking-head</td><td>Médio frontal, mãos na bancada, expressão neutra</td><td>Gesto de mão aberto, meio sorriso, falando</td><td>Contemplativo</td></tr>
+  <tr><td>3</td><td>Face push-in</td><td>Médio-close, ¾, olhando na lente</td><td>Close fechado no rosto, olhos na lente</td><td>Contemplativo</td></tr>
+  <tr><td>4</td><td>Over-the-shoulder</td><td>OTS ampla, tela da DAW ao fundo</td><td>OTS fechada, waveforms nítidas, mão no mouse</td><td>Contemplativo</td></tr>
+  <tr><td>5</td><td>Macro MIDI</td><td>Mão saindo do mouse em direção ao controlador</td><td>Dedos pressionando as teclas</td><td>Cinético leve</td></tr>
+  <tr><td>6</td><td>Vocal take</td><td>Girando a cadeira para o microfone</td><td>No mic, headphone, olhos fechados, cantando</td><td>Contemplativo</td></tr>
+  <tr><td>7</td><td>Reveal + marca</td><td>Extreme close-up do VU do compressor pulsando</td><td>Retrato de marca: fundo azul, olhando na lente</td><td>Cinético leve → corte seco</td></tr>
+</table>
+
+<!-- ============ SHOT 1 ============ -->
+<div class="shot">
+<h3>Plano 1 — Establishing</h3>
+<p class="lead">Abre o vídeo. A sala antes do trabalho começar; depois Lucas entra em quadro e senta.</p>
+<div class="pair">
+  <div class="card">
+    <span class="tag start">Frame 01A · Start</span>
+    <div class="prompt">Wide establishing shot of an intimate home music studio: a solid walnut desk with warm visible grain; the back wall is a wooden skyline acoustic diffuser of staggered timber blocks; a centred ultrawide monitor showing a DAW timeline with coloured audio waveforms; two black nearfield studio monitors on foam isolation pads flanking the screen; a slim silver audio interface in front; a lower shelf with a synthesizer, a groovebox and a rack unit; a large-diaphragm condenser microphone on a black articulated boom arm with a round pop filter at frame right; closed-back headphones on the desk edge.
+
+The black leather studio chair sits empty, turned slightly toward the desk. Every screen and gear LED is powered on and glowing softly. No people anywhere in frame. A thin shaft of warm light crosses the room with faint dust drifting in it.
+
+Low-key motivated lighting: soft warm key from camera-left at 45 degrees, subtle cool rim on the desk edges, deep controlled shadows, no blown highlights, practical LEDs glowing warm.
+
+Camera at eye level on a locked tripod, 24mm lens, framing near-symmetrical but weighted toward the diffuser wall, generous headroom. Still, quiet, expectant mood — the room before the session begins.
+
+Full-frame 35mm cinematography, warm filmic colour, teal-leaning shadows and amber highlights, gentle fine grain, faint halation on speculars, protected lifted blacks. Photoreal, prime lens, natural depth of field, 2K. Inspired by the work of award-winning directors.</div>
+  </div>
+  <div class="card">
+    <span class="tag end">Frame 01B · End</span>
+    <div class="prompt">Same wide establishing framing and lens as the empty studio shot — identical camera position, 24mm, locked tripod, eye level, same near-symmetrical composition weighted to the diffuser wall.
+
+Now a man is seated in the black leather studio chair, three-quarter turned toward camera, both hands settling the closed-back headphones onto his ears, eyes down toward the desk. Same man in every frame: early-30s, warm light-brown mixed complexion, closely buzzed near-shaved hair with a natural hairline, thick dark eyebrows, dark brown eyes, straight nose, full lips, a neat mustache linking into a narrow chin-strap beard with a small soul patch, lean face. Match the supplied face references exactly.
+
+He wears a plain white crew-neck t-shirt with no print, an open black denim trucker jacket, and black trousers.
+
+The studio is unchanged from the empty frame: walnut desk, wooden skyline diffuser wall, centred ultrawide monitor with coloured DAW waveforms, two flanking black studio monitors, silver audio interface, lower shelf of synths, condenser mic on a boom arm at frame right.
+
+Low-key motivated lighting: soft warm key from camera-left at 45 degrees, subtle cool rim separating him from the dark diffuser wall, deep controlled shadows. Calm, unhurried mood — the first moment of a session.
+
+Full-frame 35mm cinematography, warm filmic colour, teal shadows and amber highlights, gentle fine grain, faint halation, protected lifted blacks, midtone priority on skin. Photoreal, prime lens, 2K. Inspired by the work of award-winning directors.</div>
+  </div>
+</div>
+</div>
+
+<!-- ============ SHOT 2 ============ -->
+<div class="shot">
+<h3>Plano 2 — Talking-head intro</h3>
+<p class="lead">Ele se apresenta. Casa com a primeira fala do roteiro.</p>
+<div class="pair">
+  <div class="card">
+    <span class="tag start">Frame 02A · Start</span>
+    <div class="prompt">Medium shot of a man seated facing camera at the walnut desk of an intimate home music studio, framed slightly right of centre, with the large-diaphragm condenser microphone and round pop filter intruding soft in the right foreground.
+
+Same man in every frame: early-30s, warm light-brown mixed complexion, closely buzzed near-shaved hair with a natural hairline, thick dark eyebrows, dark brown eyes, straight nose, full lips, a neat mustache linking into a narrow chin-strap beard with a small soul patch, lean face. Match the supplied face references exactly.
+
+Both hands rest on the front edge of the desk. Relaxed, neutral pre-speech expression, mouth closed, looking straight into the lens.
+
+He wears a plain white crew-neck t-shirt with no print, an open black denim trucker jacket, black trousers.
+
+Behind him: the wooden skyline acoustic diffuser wall, the centred ultrawide monitor with coloured DAW waveforms, two flanking black studio monitors, the lower shelf of synths — all soft in shallow focus.
+
+Low-key motivated lighting: soft warm key from camera-left at 45 degrees, subtle cool rim, deep controlled shadows, no blown highlights, gear LEDs glowing warm.
+
+50mm lens, eye level, static camera. Intimate, grounded, documentary mood.
+
+Full-frame 35mm cinematography, warm filmic colour, teal shadows and amber highlights, gentle fine grain, faint halation, protected lifted blacks, midtone priority on skin. Photoreal, prime lens, 2K. Inspired by the work of award-winning directors.</div>
+  </div>
+  <div class="card">
+    <span class="tag end">Frame 02B · End</span>
+    <div class="prompt">Same medium shot, 50mm lens, eye level, static — same seat, same slightly-right-of-centre framing as the talking-head start, at the walnut desk of the intimate home music studio, condenser microphone and pop filter soft in the right foreground.
+
+Same man as every other frame: early-30s, warm light-brown mixed complexion, closely buzzed near-shaved hair, thick dark eyebrows, dark brown eyes, straight nose, full lips, neat mustache into a narrow chin-strap beard with a small soul patch, lean face. Match the supplied face references exactly.
+
+Now mid-sentence: one open palm lifted toward camera in a natural explaining gesture, a warm slight smile, mouth open speaking, eyes on the lens.
+
+He wears a plain white crew-neck t-shirt with no print, an open black denim trucker jacket, black trousers.
+
+Background unchanged: wooden skyline diffuser wall, ultrawide monitor with coloured DAW waveforms, flanking studio monitors, lower shelf of synths — soft in shallow focus.
+
+Low-key motivated lighting: soft warm key from camera-left at 45 degrees, subtle cool rim, deep controlled shadows. Warm, confident, conversational mood.
+
+Full-frame 35mm cinematography, warm filmic colour, teal shadows and amber highlights, gentle fine grain, faint halation, protected lifted blacks, midtone priority on skin. Photoreal, prime lens, 2K. Inspired by the work of award-winning directors.</div>
+  </div>
+</div>
+</div>
+
+<!-- ============ SHOT 3 ============ -->
+<div class="shot pgbreak">
+<h3>Plano 3 — Face push-in</h3>
+<p class="lead">A câmera aproxima até o rosto. É o frame que mais testa a feição — gere com as 3 referências e compare lado a lado.</p>
+<div class="pair">
+  <div class="card">
+    <span class="tag start">Frame 03A · Start</span>
+    <div class="prompt">Medium-close portrait of a man seated in an intimate home music studio, centred in frame, three-quarter angle, looking directly into the lens with a calm, confident expression.
+
+Same man in every frame: early-30s, warm light-brown mixed complexion, closely buzzed near-shaved hair with a natural hairline, thick dark eyebrows, dark brown eyes, straight nose, full lips, a neat mustache linking into a narrow chin-strap beard with a small soul patch, lean face. Match the supplied face references exactly — identical bone structure, hairline and beard shape.
+
+Behind him the gear and the wooden skyline diffuser wall fall into soft focus.
+
+He wears a plain white crew-neck t-shirt with no print and an open black denim trucker jacket.
+
+85mm lens, shallow depth of field, eye level, static camera.
+
+Low-key motivated lighting: soft warm key from camera-left at 45 degrees with a clear warm catchlight in each eye, subtle cool rim on the jaw and shoulder, deep controlled shadows. Assured, close, personal mood.
+
+Full-frame 35mm cinematography, warm filmic colour, teal shadows and amber highlights, gentle fine grain, faint halation, protected lifted blacks, midtone priority on skin. Photoreal, prime lens, 2K. Inspired by the work of award-winning directors.</div>
+  </div>
+  <div class="card">
+    <span class="tag end">Frame 03B · End</span>
+    <div class="prompt">Tight close-up of the same man — face and the tops of the shoulders only — eyes locked to the lens, the same calm confident expression, in the intimate home music studio.
+
+Same man as every other frame: early-30s, warm light-brown mixed complexion, closely buzzed near-shaved hair with a natural hairline, thick dark eyebrows, dark brown eyes, straight nose, full lips, neat mustache into a narrow chin-strap beard with a small soul patch, lean face. Match the supplied face references exactly.
+
+The wooden diffuser wall behind is fully melted into warm bokeh. Crisp micro-detail on skin pores, individual eyebrow hairs, the texture of the mustache and chin-strap beard, a soft warm catchlight in each eye.
+
+He wears the plain white crew-neck t-shirt and the collar of the black denim jacket.
+
+85mm lens, very shallow depth of field, eye level, static.
+
+Low-key motivated lighting: strong soft warm key from camera-left, subtle cool rim tracing the cheekbone and ear, deep controlled shadow on the shadow side. Intense, intimate mood.
+
+Full-frame 35mm cinematography, warm filmic colour, teal shadows and amber highlights, gentle fine grain, faint halation on the catchlights, protected lifted blacks, midtone priority on skin. Photoreal, prime lens, 2K. Inspired by the work of award-winning directors.</div>
+  </div>
+</div>
+</div>
+
+<!-- ============ SHOT 4 ============ -->
+<div class="shot">
+<h3>Plano 4 — Over-the-shoulder</h3>
+<p class="lead">Ele trabalhando na DAW, visto por trás. O End mostra a tela nítida.</p>
+<div class="pair">
+  <div class="card">
+    <span class="tag start">Frame 04A · Start</span>
+    <div class="prompt">Over-the-shoulder shot from behind the man's right shoulder as he sits at the walnut desk of an intimate home music studio.
+
+His shoulder and the back of his closely buzzed head sit soft and large in the lower-left foreground. The centred ultrawide monitor showing coloured DAW waveforms and a mixer strip reads mid-frame; the rest of the desk and gear — condenser mic on a boom arm at right, two black studio monitors, lower shelf of synths, wooden skyline diffuser wall — is visible around it.
+
+Same man as every frame (seen from behind here): early-30s, closely buzzed near-shaved hair with a natural hairline, lean build. He wears a plain white crew-neck t-shirt (collar visible at the neck) and an open black denim trucker jacket.
+
+35mm lens, eye level, static camera.
+
+Low-key motivated lighting: soft warm key from camera-left, the monitor adding a cool fill on his shoulder and ear, deep controlled shadows. Focused, observational mood.
+
+Full-frame 35mm cinematography, warm filmic colour, teal shadows and amber highlights, gentle fine grain, faint halation on the screen glow, protected lifted blacks. Photoreal, prime lens, 2K. Inspired by the work of award-winning directors.</div>
+  </div>
+  <div class="card">
+    <span class="tag end">Frame 04B · End</span>
+    <div class="prompt">Closer over-the-shoulder shot, same angle from behind the man's right shoulder at the walnut desk of the intimate home music studio.
+
+Now the ultrawide DAW screen dominates the frame and is critically sharp — multicoloured audio waveforms, a channel mixer strip, transport controls, small UI text — while his shoulder and his hand resting on the computer mouse blur in the lower foreground.
+
+Same man as every frame (seen from behind): closely buzzed near-shaved hair, lean build, plain white crew-neck t-shirt collar and open black denim trucker jacket.
+
+50mm lens, eye level, static camera.
+
+Low-key motivated lighting: the monitor is now the main cool key on the foreground, warm practical LEDs behind, deep controlled shadows. Precise, absorbed mood.
+
+Full-frame 35mm cinematography, warm filmic colour, teal shadows and amber highlights, gentle fine grain, faint halation on the screen, protected lifted blacks. Photoreal, prime lens, 2K. Inspired by the work of award-winning directors.</div>
+  </div>
+</div>
+</div>
+
+<!-- ============ SHOT 5 ============ -->
+<div class="shot pgbreak">
+<h3>Plano 5 — Macro MIDI</h3>
+<p class="lead">Detalhe da mão tocando o controlador. Registro cinético leve na Fase 2.</p>
+<div class="pair">
+  <div class="card">
+    <span class="tag start">Frame 05A · Start</span>
+    <div class="prompt">Macro shot inside an intimate home music studio: the man's right hand lifting off the computer mouse and moving toward the black MIDI keyboard controller on the walnut desk, fingers relaxed and slightly curled, hand in motion.
+
+The controller's knobs, pads and pitch wheel sit soft in the foreground; the white t-shirt cuff and black denim jacket sleeve enter the frame at the wrist. Skin tone: warm light-brown, natural hair on the forearm, clean short nails. Match the supplied references for skin tone and hand character.
+
+Behind, fully out of focus: the ultrawide monitor glow and the wooden diffuser wall.
+
+100mm macro lens, extreme shallow depth of field, static camera following the hand.
+
+Low-key motivated lighting: soft warm key raking across the skin and the keybed, catching the ridges of the knuckles, deep shadow behind. Anticipatory, tactile mood.
+
+Full-frame 35mm cinematography, warm filmic colour, teal shadows and amber highlights, gentle fine grain, faint halation, protected lifted blacks. Photoreal, prime macro lens, 2K. Inspired by the work of award-winning directors.</div>
+  </div>
+  <div class="card">
+    <span class="tag end">Frame 05B · End</span>
+    <div class="prompt">Macro shot inside the intimate home music studio: the man's fingertips pressing down three white keys of the black MIDI keyboard controller, visible key travel, tendons and knuckle detail crisp, skin texture and pores sharp.
+
+One small rubber pad glows soft red behind the hand; the black denim jacket sleeve and white t-shirt cuff are soft at the frame edge. Warm light-brown skin tone, clean short nails — match the supplied references.
+
+Behind, fully out of focus: the ultrawide monitor glow and the wooden diffuser wall.
+
+100mm macro lens, extreme shallow depth of field, static camera.
+
+Low-key motivated lighting: soft warm key defining every ridge and tendon of the fingers, a faint red bounce from the lit pad, deep shadow behind. Deliberate, musical mood.
+
+Full-frame 35mm cinematography, warm filmic colour, teal shadows and amber highlights, gentle fine grain, faint halation, protected lifted blacks. Photoreal, prime macro lens, 2K. Inspired by the work of award-winning directors.</div>
+  </div>
+</div>
+</div>
+
+<!-- ============ SHOT 6 ============ -->
+<div class="shot">
+<h3>Plano 6 — Vocal take</h3>
+<p class="lead">Ele gira para o microfone e grava. Momento de maior entrega.</p>
+<div class="pair">
+  <div class="card">
+    <span class="tag start">Frame 06A · Start</span>
+    <div class="prompt">Medium shot in an intimate home music studio: the man rotating the black studio chair toward the large-diaphragm condenser microphone at frame right, his torso turning, one hand reaching up toward the closed-back headphones, his face moving from profile to three-quarter.
+
+Same man in every frame: early-30s, warm light-brown mixed complexion, closely buzzed near-shaved hair with a natural hairline, thick dark eyebrows, straight nose, full lips, neat mustache into a narrow chin-strap beard with a small soul patch, lean face. Match the supplied face references exactly.
+
+He wears a plain white crew-neck t-shirt with no print, an open black denim trucker jacket, black trousers.
+
+Behind: the wooden skyline diffuser wall, the ultrawide monitor with coloured DAW waveforms, the flanking studio monitors — soft in shallow focus.
+
+40mm lens, eye level, slight movement implied in the turn.
+
+Low-key motivated lighting: soft warm key from camera-left catching the turn of his face, subtle cool rim, deep controlled shadows. Transitional, rising-focus mood.
+
+Full-frame 35mm cinematography, warm filmic colour, teal shadows and amber highlights, gentle fine grain, faint halation, protected lifted blacks, midtone priority on skin. Photoreal, prime lens, 2K. Inspired by the work of award-winning directors.</div>
+  </div>
+  <div class="card">
+    <span class="tag end">Frame 06B · End</span>
+    <div class="prompt">Medium-close shot in the intimate home music studio: the man at the large-diaphragm condenser microphone behind the round pop filter, both closed-back headphone cups on his ears, eyes closed, mouth open mid-phrase, one hand lightly cradling a headphone cup.
+
+Same man as every other frame: early-30s, warm light-brown mixed complexion, closely buzzed near-shaved hair, thick dark eyebrows, straight nose, full lips, neat mustache into a narrow chin-strap beard with a small soul patch, lean face. Match the supplied face references exactly.
+
+The microphone body and the pop filter are sharp along the foreground edge. He wears a plain white crew-neck t-shirt with no print and an open black denim trucker jacket.
+
+Behind: the wooden diffuser wall and gear soft in shallow focus.
+
+65mm lens, shallow depth of field, eye level, static.
+
+Low-key motivated lighting: intimate soft warm key on his face, subtle cool rim on the headphone band and cheekbone, deep shadow behind. Immersed, expressive mood.
+
+Full-frame 35mm cinematography, warm filmic colour, teal shadows and amber highlights, gentle fine grain, faint halation, protected lifted blacks, midtone priority on skin. Photoreal, prime lens, 2K. Inspired by the work of award-winning directors.</div>
+  </div>
+</div>
+</div>
+
+<!-- ============ SHOT 7 ============ -->
+<div class="shot pgbreak">
+<h3>Plano 7 — Reveal + marca</h3>
+<p class="lead">Fecha o vídeo: macro do VU do compressor pulsando → corte seco para o retrato de marca em fundo azul.</p>
+<div class="pair">
+  <div class="card">
+    <span class="tag start">Frame 07A · Start</span>
+    <div class="prompt">Extreme close-up inside an intimate home music studio of the illuminated VU meter on an outboard compressor unit: the needle caught mid-swing across a warm amber-lit scale marked "GAIN REDUCTION", brushed-metal faceplate with fine machining marks, the surrounding chicken-head knobs soft and out of focus, deep black around the glow.
+
+100mm macro lens, extreme shallow depth of field, static camera.
+
+Lighting: the meter's own warm tungsten glow is the key light, faint halation blooming off the curved meter glass, a subtle cool spill from the studio behind. Hypnotic, detail-obsessed mood.
+
+Full-frame 35mm cinematography, warm filmic colour, deep teal-black shadows and amber highlights, gentle fine grain, visible halation on the glass, protected lifted blacks. Photoreal, prime macro lens, 2K. Inspired by the work of award-winning directors.</div>
+  </div>
+  <div class="card">
+    <span class="tag end">Frame 07B · End</span>
+    <div class="prompt">Studio portrait of the man against a seamless dark teal-blue backdrop — a clean photographic sweep, NOT the studio room, no gear visible.
+
+Same man as every other frame, matching the supplied face references exactly: early-30s, warm light-brown mixed complexion, closely buzzed near-shaved hair with a natural hairline, thick dark eyebrows, dark brown eyes, straight nose, full lips, a neat mustache linking into a narrow chin-strap beard with a small soul patch, lean face.
+
+Chest-up, centred, squared to camera, a direct unsmiling gaze into the lens. He wears the plain white crew-neck t-shirt with no print and the open black denim trucker jacket.
+
+A single soft key from camera-left, gentle falloff into blue shadow on the other side, a subtle cool rim on the shoulder. 85mm lens, shallow depth of field, eye level.
+
+Composed, brand-defining, quietly confident mood.
+
+Full-frame 35mm cinematography, restrained cool-warm colour, gentle fine grain, faint halation, protected lifted blacks, midtone priority on skin. Photoreal, prime lens, 2K. Inspired by the work of award-winning directors.</div>
+  </div>
+</div>
+<div class="lock"><b>Nota sobre o Frame 07B</b>
+Gerei em figurino novo (camisa branca + jaqueta jeans preta) para manter continuidade com a série. Se quiser que o fecho amarre no seu catálogo real (como no vídeo editado), troque por: <i>"he wears a dark green t-shirt with a light line-art print of a Roman emperor bust with a laurel wreath"</i> — ou simplesmente use a sua foto de retrato original nesse ponto do corte, sem gerar nada.
+</div>
+</div>
+
+<h2>Extras opcionais (se o roteiro final pedir)</h2>
+<ul>
+  <li><b>Frame de arte / reveal:</b> um still da capa do trabalho aparecendo na tela ou flutuando no ar, para a transição glitch RGB do vídeo editado.</li>
+  <li><b>Cartão de abertura:</b> "Lucas Corel / Music Producer" — texto, não precisa de geração.</li>
+  <li><b>Plano de perfil lateral</b> olhando para a tela (existia no vídeo editado) — posso escrever como um 8º par.</li>
+</ul>
+
+<h2>Referências de rosto nesta pasta</h2>
+<ul>
+  <li><code>referencia-rosto/frame-frontal.jpg</code> — frontal, extraído do vídeo</li>
+  <li><code>referencia-rosto/frame-perfil.jpg</code> — ¾ / perfil, extraído do vídeo</li>
+  <li><code>referencia-rosto/frame-marca-fundo-azul.jpg</code> — retrato fundo azul (referência do Plano 7B)</li>
+  <li>+ as 2 fotos de retrato que você enviou no chat (camiseta estampada) — <b>use como referência primária de feição</b></li>
+</ul>
+
+</body>
+</html>
